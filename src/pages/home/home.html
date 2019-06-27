@@ -1,14 +1,53 @@
-<ion-header>
+ <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Blanvvk
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<ion-content>
+  <h1 [style.color]="'red'">Angular JSS example</h1>
+  <div [style.color]="'red'"> This should be red </div>
+
+  <div  class="container " *ngIf="multitemplate" >
+
+    <div *ngFor="let tem of  template ; let i =index" [ngStyle]="tem.background">
+     
+      <h3 [ngStyle]="tem.background.head" >{{tem.title}}</h3>
+
+  </div>
+
+  </div >
+
+
+
+<div id="img" *ngIf="newchosenTemplate"   [ngStyle]="chosentemplate" >
+
+  <h3>{{chosentitle}}</h3>
+</div>
+
+  <!-- <ion-grid *ngIf="showBtnbackGroundColor">
+    <ion-row>
+
+      <ion-col *ngFor="let tem of  color ; let i =index" col-2>
+        <button [ngStyle]="tem.myStyles" ion-button (click)="btnColor(i)"></button>
+
+      </ion-col>
+
+    </ion-row>
+
+    <button ion-button (click)="share()">share</button>
+
+  </ion-grid>
+   -->
+
+<img src="../../assets/MITIMAGES/Blue Illustration Birthday Card (2).png">
+
+
+
+</ion-content> 
+ 
+
+
+

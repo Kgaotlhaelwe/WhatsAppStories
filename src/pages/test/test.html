@@ -1,0 +1,68 @@
+<!--
+  Generated template for the TestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>testt</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <ion-slides   *ngIf="showAllTemplate"> 
+    <ion-slide *ngFor="let tem of  templates ; let i =index "  (click)="chosenTemplate(tem.card , tem.head , tem.emptybar,tem.title, tem.bar, tem.filledbar)">
+        <div class="container">
+            <div >
+                
+                   <div  [ngStyle]="tem.card"    >
+                       <h3 [ngStyle]="tem.head">{{tem.title}}</h3>
+                       <div [ngStyle]="tem.bar">
+                         <div [ngStyle]="tem.emptybar"></div>
+                         <div [ngStyle]="tem.filledbar"></div>
+                       </div>
+                       
+                     </div>
+               </div>
+              </div>
+
+            
+     
+    </ion-slide>
+    </ion-slides>
+
+
+    
+    <div *ngIf="showChoosenTemplate">
+       
+
+      <div class="container">
+          <div >
+        <div  [ngStyle]="newTemplate.card">
+            <h3 [ngStyle]="newTemplate.head">{{newTemplate.title}}</h3>
+            <div [ngStyle]="newTemplate.bar"></div>
+           
+            <div [ngStyle]="newTemplate.filledbar"></div>
+            <button ion-button  outline>write your message here</button>
+        </div>
+      </div >
+      </div>
+    </div>
+
+
+    
+   
+    <ion-grid *ngIf="hideBgColor" (click)="changeBgColor()">
+      <ion-row>
+        <ion-col col-3 *ngFor="let a of changeBackGroundColor ; let i =index "   (click)="changeBgColor(i)">
+          <div >
+            <div [ngStyle]="a.card"  ></div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  
+</ion-content>
